@@ -1,0 +1,23 @@
+[project]
+name = "vscode-python-test-adapter-socket"
+version = "0.0.0"
+description = ""
+authors = [
+    {name = "John Jones", email = "john.jones@beambenefits.com"},
+]
+dependencies = ["pytest>=7.4.3", "pytest-socket>=0.6.0"]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pytest.ini_options]
+addopts = [
+
+    # "--disable-socket",    # Disable network in test with pytest-socket
+    # "--allow-unix-socket", # Allow unix sockets for async
+    # "--allow-hosts=localhost",
+
+    # Not part of error reproduction
+    # https://docs.pytest.org/en/7.1.x/explanation/goodpractices.html
+    "--import-mode=importlib",
+]
